@@ -147,8 +147,7 @@ At each iteration:
 
    $$
    \Large
-   \alpha_{\mathrm{MH}}
-   =
+   \alpha_{\mathrm{MH}}=
    \min\Biggl(
      1,\;
      \frac{\pi(\theta^{\*})}{\pi(\theta)}
@@ -177,8 +176,3 @@ At each iteration:
    $\alpha_{\mathrm{MH}}$; otherwise keep $\theta$.
 
 After burn-in, the chain provides ABC posterior samples for $\theta$.
-
-**Flowchart (ABC–MCMC)**
-
-```markdown
-![Flowchart of the ABC–MCMC algorithm](figures/abc_mcmc_bivariate.png)
