@@ -31,7 +31,7 @@ The cumulative distribution function (CDF) is
 
 $$
 \Large
-F(x, y \mid \theta_1, \theta_2, \beta_1, \beta_2, \delta)
+F(x, y; \theta_{1}, \theta_{2}, \beta_{1}, \beta_{2}, \delta)
 =
 1 - \exp\left\{
 -
