@@ -30,7 +30,7 @@ The cumulative distribution function (CDF) is:
 
 $$
 \Large
-F(x, y \mid \theta_1, \theta_2, \beta_1, \beta_2, \delta)= 1 - \exp\left(- \left(\left( \frac{x}{\theta_1} \right)^{\beta_1 / \delta}+\left( \frac{y}{\theta_2} \right)^{\beta_2 / \delta}\right)^{\delta}\right)
+F(x, y \mid \theta_1, \theta_2, \beta_1, \beta_2, \delta)= 1 - \exp\left(-\left(\left(\frac{x}{\theta_1}\right)^{\beta_1/\delta}+\left(\frac{y}{\theta_2}\right)^{\beta_2/\delta}\right)^{\delta}\right)
 $$
 
 where $x > 0$, $y > 0$.
