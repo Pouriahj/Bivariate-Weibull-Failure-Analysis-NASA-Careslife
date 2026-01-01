@@ -26,9 +26,9 @@ for two failure variables $x$ and $y$:
 - scale parameters: $\theta_1, \theta_2 > 0$  
 - dependence parameter: $\delta > 0$
 
-The cumulative distribution function (CDF) is
+The cumulative distribution function (CDF) is:
 
-$
+$$
 \Large
 F(x, y \mid \theta_1, \theta_2, \beta_1, \beta_2, \delta)=
 1 - \exp\left(
@@ -38,7 +38,7 @@ F(x, y \mid \theta_1, \theta_2, \beta_1, \beta_2, \delta)=
       \left( \frac{y}{\theta_2} \right)^{\beta_2 / \delta}
     \right)^{\delta}
 \right)
-$
+$$
 
 where $x > 0$, $y > 0$.
 
