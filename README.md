@@ -147,7 +147,7 @@ At each iteration:
 
    $$
    \Large
-   \alpha_{\mathrm{MH}}=
+   \alpha_{MH}=
    \min\Biggl(
      1,\;
      \frac{\pi(\theta^{\*})}{\pi(\theta)}
