@@ -145,27 +145,27 @@ At each iteration:
 2. **Compute Metropolis–Hastings ratio**  
    Combine the prior and bivariate Weibull likelihood:
 
-   $$
-   \Large
-   \alpha_{MH}=
-   \min\Biggl(
-     1,\;
-     \frac{\pi(\theta^{\*})}{\pi(\theta)}
-     \prod_{i=1}^{N}
-     \frac{
-       f\!\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta^{\*}\right)
-     }{
-       f\!\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta\right)
-     }
-     \frac{
-       q(\theta \mid \theta^{\*})
-     }{
-       q(\theta^{\*} \mid \theta)
-     }
-   \Biggr)
-   $$
+$$
+\Large
+\alpha_{\mathrm{MH}} =
+\min\left(
+  1,\,
+  \frac{\pi(\theta^{\*})}{\pi(\theta)}
+  \prod_{i=1}^{N}
+  \frac{
+    f\!\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta^{\*}\right)
+  }{
+    f\!\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta\right)
+  }
+  \frac{
+    q(\theta \mid \theta^{\*})
+  }{
+    q(\theta^{\*} \mid \theta)
+  }
+\right)
+$$
 
-   where $q$ is the proposal density.
+where $q$ is the proposal density.
 
 3. **ABC filter**  
    Simulate synthetic data under $\theta^{\*}$, compute $d(\theta^{\*})$,
