@@ -100,14 +100,12 @@ summaries, depending on the script):
 
 $$
 \Large
-d(\theta)
-=
+d(\theta)=
 \left\|
 \begin{pmatrix}
 x^{\text{sim}} \\
 y^{\text{sim}}
-\end{pmatrix}
--
+\end{pmatrix}-
 \begin{pmatrix}
 x^{\text{obs}} \\
 y^{\text{obs}}
