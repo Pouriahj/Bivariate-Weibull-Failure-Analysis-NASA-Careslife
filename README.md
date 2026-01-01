@@ -193,27 +193,25 @@ Hamiltonian
 
 $$
 \Large
-H(\theta, p)=
-- \log \pi(\theta \mid \text{data})
-+ \frac{1}{2} \, p^{\mathsf{T}} M^{-1} p.
+H(\theta, p)= - \log \pi(\theta \mid \text{data}) + \frac{1}{2} \, p^{\mathsf{T}} M^{-1} p.
 $$
 
 At each iteration:
 
 1. **Sample momentum**  
-   Draw $p^{(0)} \sim \mathcal{N}(0, M)$.
+Draw $p^{(0)} \sim \mathcal{N}(0, M)$.
 
 2. **Leapfrog integration**  
-   Starting from $(\theta^{(0)}, p^{(0)})$, run $L$ leapfrog steps with step size
-   $\varepsilon_{\text{HMC}}$ using the gradient of the log posterior
-   (computed by Stan) to obtain a proposal $(\theta^{\*}, p^{\*})$.
+Starting from $(\theta^{(0)}, p^{(0)})$, run $L$ leapfrog steps with step size
+$\varepsilon_{\text{HMC}}$ using the gradient of the log posterior
+(computed by Stan) to obtain a proposal $(\theta^{\*}, p^{\*})$.
 
 3. **ABC filter**  
-   Simulate synthetic data under $\theta^{\*}$ and compute $d(\theta^{\*})$.
-   If $d(\theta^{\*}) > \varepsilon$, reject immediately and keep $\theta^{(0)}$.
+Simulate synthetic data under $\theta^{\*}$ and compute $d(\theta^{\*})$.
+If $d(\theta^{\*}) > \varepsilon$, reject immediately and keep $\theta^{(0)}$.
 
 4. **Accept / reject**  
-   If $d(\theta^{\*}) \le \varepsilon$, compute the Hamiltonian difference
+If $d(\theta^{\*}) \le \varepsilon$, compute the Hamiltonian difference
 
 $$
 \Large
