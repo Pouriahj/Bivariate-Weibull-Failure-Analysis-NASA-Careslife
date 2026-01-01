@@ -31,15 +31,14 @@ The cumulative distribution function (CDF) is
 
 $$
 \Large
-F(x, y; \theta_{1}, \theta_{2}, \beta_{1}, \beta_{2}, \delta)
+F(x, y \mid \theta_1, \theta_2, \beta_1, \beta_2, \delta)
 =
 1 - \exp\left\{
--
-\left[
-\left( \frac{x}{\theta_1} \right)^{\beta_1 / \delta}
-+
-\left( \frac{y}{\theta_2} \right)^{\beta_2 / \delta}
-\right]^{\delta}
+ -\left[
+   \left( \frac{x}{\theta_1} \right)^{\beta_1 / \delta}
+   +
+   \left( \frac{y}{\theta_2} \right)^{\beta_2 / \delta}
+ \right]^{\delta}
 \right\}
 $$
 
