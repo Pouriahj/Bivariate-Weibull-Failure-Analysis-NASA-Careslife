@@ -174,3 +174,63 @@ where $q$ is the proposal density.
    $\alpha_{\mathrm{MH}}$; otherwise keep $\theta$.
 
 After burn-in, the chain provides ABC posterior samples for $\theta$.
+
+## 5. ABC–HMC (Hamiltonian Monte Carlo)
+
+ABC–HMC uses Hamiltonian dynamics to explore the posterior of
+
+$$
+\Large
+\theta = (\theta_1, \theta_2, \beta_1, \beta_2, \delta)
+$$
+
+more efficiently. In this study, the HMC sampler is implemented in **Stan** with
+**independent uniform priors** for all five parameters (see the Stan model file
+in the `stan/` folder).
+
+We introduce a momentum variable $p$ with mass matrix $M$ and define the
+Hamiltonian
+
+$$
+\Large
+H(\theta, p)=
+- \log \pi(\theta \mid \text{data})
++ \frac{1}{2} \, p^{\mathsf{T}} M^{-1} p.
+$$
+
+At each iteration:
+
+1. **Sample momentum**  
+   Draw $p^{(0)} \sim \mathcal{N}(0, M)$.
+
+2. **Leapfrog integration**  
+   Starting from $(\theta^{(0)}, p^{(0)})$, run $L$ leapfrog steps with step size
+   $\varepsilon_{\text{HMC}}$ using the gradient of the log posterior
+   (computed by Stan) to obtain a proposal $(\theta^{\*}, p^{\*})$.
+
+3. **ABC filter**  
+   Simulate synthetic data under $\theta^{\*}$ and compute $d(\theta^{\*})$.
+   If $d(\theta^{\*}) > \varepsilon$, reject immediately and keep $\theta^{(0)}$.
+
+4. **Accept / reject**  
+   If $d(\theta^{\*}) \le \varepsilon$, compute the Hamiltonian difference
+
+$$
+\Large
+\Delta H=
+H(\theta^{\*}, p^{\*}) - H(\theta^{(0)}, p^{(0)})
+$$
+
+and accept $\theta^{\*}$ with probability
+
+$$
+\Large
+\alpha_{\text{HMC}}=
+\min\bigl( 1,\; \exp(-\Delta H) \bigr).
+$$
+
+   Otherwise, keep $\theta^{(0)}$.
+
+The Stan code for this ABC–HMC model is provided in the repository so that the
+prior ranges, step size, number of leapfrog steps and other details can be
+inspected and modified directly.
