@@ -50,8 +50,12 @@ $$
 
 ## 2. Priors
 
-All parameters are **strictly positive**, so we assign independent
-exponential priors
+We distinguish between the priors used in the two ABC algorithms.
+
+### 2.1 Priors for ABC–MCMC (Metropolis–Hastings)
+
+For the ABC–MCMC sampler we use **independent exponential priors** for all
+five positive parameters
 
 $$
 \Large
@@ -62,8 +66,26 @@ $$
 \delta   \sim \mathrm{Exp}(\lambda_5).
 $$
 
-The hyperparameters $\lambda_1, \ldots, \lambda_5$ are chosen to be weakly
-informative and can be edited directly in the MATLAB scripts.
+The rate parameters $\lambda_1,\dots,\lambda_5$ are chosen to be weakly
+informative and can be modified directly in the ABC–MCMC MATLAB script.
+
+### 2.2 Priors for ABC–HMC (Stan)
+
+For the ABC–HMC sampler implemented in **Stan**, we use **independent uniform
+priors** over physically reasonable ranges:
+
+$$
+\Large
+\theta_1 \sim \mathrm{Unif}(a_1, b_1), \quad
+\theta_2 \sim \mathrm{Unif}(a_2, b_2), \quad
+\beta_1  \sim \mathrm{Unif}(a_3, b_3), \quad
+\beta_2  \sim \mathrm{Unif}(a_4, b_4), \quad
+\delta   \sim \mathrm{Unif}(a_5, b_5).
+$$
+
+The bounds $(a_j, b_j)$ are selected based on engineering knowledge of the
+material and test geometry and are explicitly coded in the Stan model file
+(e.g. `stan/bivariate_weibull_abc_hmc.stan`).
 
 ---
 
