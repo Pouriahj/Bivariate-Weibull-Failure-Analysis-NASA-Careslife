@@ -1,8 +1,7 @@
-# Bivariate Weibull Bayesian Estimation with ABC (MCMC & HMC)
+# Bivariate Weibull Failure Analysis of Advanced Ceramics (NASA CARES/LIFE Benchmark)
 
-This repository contains MATLAB implementations of **Approximate Bayesian Computation (ABC)**
-using **Metropolis–Hastings MCMC** and **Hamiltonian Monte Carlo (HMC)** for a
-**5-parameter bivariate Weibull distribution** applied to failure analysis of advanced ceramics.
+This repository contains MATLAB implementations of **Approximate Bayesian Computation (ABC)** 
+using **Metropolis–Hastings MCMC** and **Hamiltonian Monte Carlo (HMC)** for a 5-parameter bivariate Weibull distribution applied to failure analysis of advanced ceramics, calibrated to experimental data and benchmarked against **NASA’s CARES/LIFE** Batdorf-based reliability predictions.
 
 The code accompanies the article:
 
