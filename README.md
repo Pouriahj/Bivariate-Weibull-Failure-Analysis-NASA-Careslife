@@ -153,9 +153,9 @@ $$
   \frac{\pi(\theta^{\*})}{\pi(\theta)}
   \prod_{i=1}^{N}
   \frac{
-    f\!\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta^{\*}\right)
+    f\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta^{\*}\right)
   }{
-    f\!\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta\right)
+    f\left(x_i^{\text{obs}}, y_i^{\text{obs}} \mid \theta\right)
   }
   \frac{
     q(\theta \mid \theta^{\*})
