@@ -25,7 +25,7 @@ d2 = dat[ , 2];
 
 tp1 = 30;
 
-fit = stan(file = "bivarweibullt1.stan",
+fit = stan(file = "bivarweibull.stan",
            data = list(xy = dat, LENGTH = tp1),
            warmup = 100,
            iter = 200,
