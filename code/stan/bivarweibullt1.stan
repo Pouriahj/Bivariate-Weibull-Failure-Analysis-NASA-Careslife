@@ -46,7 +46,7 @@ model {
 	alpha5 <- 0;
 	beta5 <- 3;
 
-    	theta1 ~ uniform(alpha1, beta1);
+    theta1 ~ uniform(alpha1, beta1);
 	theta2 ~ uniform(alpha2, beta2);
 	theta3 ~ uniform(alpha3, beta3);
 	theta4 ~ uniform(alpha4, beta4);
