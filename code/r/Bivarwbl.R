@@ -9,7 +9,7 @@ library(ggmcmc);
 library(coda);
 
 
-dat = read_excel("C:/Users/PouriaHj/Documents/newdata.xlsx")
+dat = read_excel("data/raw/data.xlsx")
 
 # Create the bubble chart
 ggplot(dat, aes(x = Strength, y = TTF, size = Time_to_failure)) +
@@ -37,10 +37,9 @@ mcmc_chain = as.matrix(fit)
 
 plot(density(mcmc_chain[,'theta5']))
 
-# write.csv(mcmc_chain,"C:/Users/PouriaHj/Documents//datout.csv")
 write.csv(mcmc_chain, "matrix_from_fit.csv")
 
-# Defining new parameters name for fit object
+# Defining new parameter names for fit object
 
 thetan1 <- paste("\u03B8", "\u2081", sep = "");
 thetan2 <- paste("\u03B8", "\u2082", sep = "");
@@ -89,12 +88,10 @@ mcmc_parcoord(fit)
 bayesplot::color_scheme_set("red")
 ppc_dens_overlay(y = mcmc_chain[ , "theta1"] , yrep = posterior_predict(fit, draws = 50))
 
-
 colnames(data) <- c("theta1", "theta2","theta3", "theta4", "theta5")
 df <- as.data.frame(data)
 bayesplot::color_scheme_set("pink")
 mcmc_pairs(df, pars = colnames(df), off_diag_args = list(size = 1.5))
-
 
 
 
@@ -219,8 +216,6 @@ ggplot(data = df, aes(x = parameter, y = value, fill = parameter))+
   theme(plot.background = element_rect(fill = "white"))
 
   legend(c("thetan1", "thetan1", "thetan1", "thetan1", "thetan5"))
-
-
 
 
 
